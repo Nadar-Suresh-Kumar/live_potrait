@@ -15,6 +15,7 @@ api_token = st.text_input("Enter your Replicate API Token", type="password")
 if api_token:
     # Set the Replicate API token
     os.environ["REPLICATE_API_TOKEN"] = api_token
+      api = replicate.Client(api_token=os.environ["REPLICATE_API_TOKEN"])
 
     # Input fields for the parameters
     face_image_url = st.text_input("Face Image URL", value="https://replicate.delivery/pbxt/L0gy7uyLE5UP0uz12cndDdSOIgw5R3rV5N6G2pbt7kEK9dCr/0_3.webp")
